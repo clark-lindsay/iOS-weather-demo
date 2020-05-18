@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="tTY-yk-NhF">
+                                <rect key="frame" x="197" y="443" width="20" height="20"/>
+                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91X-Dd-2lm">
                                 <rect key="frame" x="174.5" y="86" width="65.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -22,29 +26,114 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000ºF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xb0-01-u68">
-                                <rect key="frame" x="35.5" y="207" width="343" height="153"/>
+                                <rect key="frame" x="35.5" y="157" width="343" height="153"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="128"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9HE-Xp-81v">
+                                <rect key="frame" x="10" y="330" width="394" height="532"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="e2W-yW-v5K">
+                                    <size key="itemSize" width="401" height="84"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="forecastCell" id="faL-Mb-ypM" customClass="ForecastCell" customModule="Weather_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="-3.5" y="0.0" width="401" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ebu-2B-4Xs" customClass="ForecastCell" customModule="Weather_Demo" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="401" height="84"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ForecastDay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5J2-0e-r5H">
+                                                    <rect key="frame" x="10" y="31.5" width="96" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000ºF High" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frc-My-iTX">
+                                                    <rect key="frame" x="141.5" y="8" width="88" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000ºF Low" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3h-pL-ciD">
+                                                    <rect key="frame" x="144" y="55" width="83" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzS-RO-9b5">
+                                                    <rect key="frame" x="303.5" y="31.5" width="82.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="y3h-pL-ciD" secondAttribute="bottom" constant="8" id="2RA-p8-pW1"/>
+                                                <constraint firstItem="Frc-My-iTX" firstAttribute="top" secondItem="Ebu-2B-4Xs" secondAttribute="top" constant="8" id="3H3-aw-rPh"/>
+                                                <constraint firstItem="5J2-0e-r5H" firstAttribute="leading" secondItem="Ebu-2B-4Xs" secondAttribute="leading" constant="10" id="3ud-JQ-dlI"/>
+                                                <constraint firstItem="Frc-My-iTX" firstAttribute="centerX" secondItem="Ebu-2B-4Xs" secondAttribute="centerX" constant="-15" id="8IE-zb-53d"/>
+                                                <constraint firstAttribute="trailing" secondItem="OzS-RO-9b5" secondAttribute="trailing" constant="15" id="Y40-h9-X9o"/>
+                                                <constraint firstItem="5J2-0e-r5H" firstAttribute="centerY" secondItem="Ebu-2B-4Xs" secondAttribute="centerY" id="gL0-Jv-Lz5"/>
+                                                <constraint firstItem="y3h-pL-ciD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5J2-0e-r5H" secondAttribute="trailing" constant="20" id="gmy-QY-CRg"/>
+                                                <constraint firstItem="OzS-RO-9b5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="y3h-pL-ciD" secondAttribute="trailing" constant="20" id="gsZ-BC-RQX"/>
+                                                <constraint firstItem="y3h-pL-ciD" firstAttribute="centerX" secondItem="Ebu-2B-4Xs" secondAttribute="centerX" constant="-15" id="kWS-d2-Iu8"/>
+                                                <constraint firstItem="OzS-RO-9b5" firstAttribute="centerY" secondItem="Ebu-2B-4Xs" secondAttribute="centerY" id="yeo-vY-9sZ"/>
+                                            </constraints>
+                                            <connections>
+                                                <outlet property="conditionsLabel" destination="OzS-RO-9b5" id="r6n-K7-ZRi"/>
+                                                <outlet property="forecastDayLabel" destination="5J2-0e-r5H" id="cJc-my-9ah"/>
+                                                <outlet property="highTempLabel" destination="Frc-My-iTX" id="Uoj-Ro-4Hx"/>
+                                                <outlet property="lowTempLabel" destination="y3h-pL-ciD" id="hEs-rZ-UIZ"/>
+                                            </connections>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="401" height="84"/>
+                                        <connections>
+                                            <outlet property="conditionsLabel" destination="OzS-RO-9b5" id="u1W-pD-qrz"/>
+                                            <outlet property="forecastDayLabel" destination="5J2-0e-r5H" id="DbN-3j-g4g"/>
+                                            <outlet property="highTempLabel" destination="Frc-My-iTX" id="C8o-7q-cif"/>
+                                            <outlet property="lowTempLabel" destination="y3h-pL-ciD" id="boa-gy-iTu"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="qOU-Bf-6Cj"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Zmv-wB-DhT"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="91X-Dd-2lm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="76H-0U-JbF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9HE-Xp-81v" secondAttribute="bottom" id="LF0-at-ZgL"/>
+                            <constraint firstItem="9HE-Xp-81v" firstAttribute="top" secondItem="Xb0-01-u68" secondAttribute="bottom" constant="20" id="NM0-b5-qEh"/>
                             <constraint firstItem="91X-Dd-2lm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QRb-ZV-KeL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9HE-Xp-81v" secondAttribute="trailing" constant="10" id="SiI-vB-9aI"/>
                             <constraint firstItem="Xb0-01-u68" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ccf-wT-GLc"/>
-                            <constraint firstItem="Xb0-01-u68" firstAttribute="top" secondItem="91X-Dd-2lm" secondAttribute="bottom" constant="100" id="r0r-rv-JUb"/>
+                            <constraint firstItem="9HE-Xp-81v" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cgB-Vn-Y2y"/>
+                            <constraint firstItem="tTY-yk-NhF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gSo-76-hdN"/>
+                            <constraint firstItem="tTY-yk-NhF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="juH-ca-ira"/>
+                            <constraint firstItem="Xb0-01-u68" firstAttribute="top" secondItem="91X-Dd-2lm" secondAttribute="bottom" constant="50" id="r0r-rv-JUb"/>
+                            <constraint firstItem="9HE-Xp-81v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="rbb-fO-5bD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9HE-Xp-81v" secondAttribute="trailing" constant="10" id="zI6-W8-dTn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="forecastList" destination="9HE-Xp-81v" id="LEC-OG-ip7"/>
                         <outlet property="locationLabel" destination="91X-Dd-2lm" id="zk6-T3-idB"/>
+                        <outlet property="spinner" destination="tTY-yk-NhF" id="0XM-3N-urx"/>
                         <outlet property="temperatureLabel" destination="Xb0-01-u68" id="Qj9-kQ-LeF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="103" y="138"/>
+            <point key="canvasLocation" x="102.89855072463769" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
