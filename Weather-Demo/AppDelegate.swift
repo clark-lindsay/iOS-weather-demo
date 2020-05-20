@@ -14,6 +14,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let url = URL(string: "http://locatlhost:3000/weather/location/Arvada,CO")
+        let session = URLSession.shared
+        let task = session.dataTask(with: url!, completionHandler: {(data, response, error) in
+            if (data != nil) {
+                let json: NSDictionary?
+                do { json = try
+                    JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions()) as? NSDictionary
+                    print("Weather JSON Data: \(String(describing: json))")
+                } catch let error {
+                    print("Error retrieving weather data: \(error)")
+                }
+            }
+        })
+        task.resume()
         // Override point for customization after application launch.
         return true
     }

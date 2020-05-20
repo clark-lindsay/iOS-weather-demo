@@ -19,8 +19,9 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="tTY-yk-NhF">
                                 <rect key="frame" x="197" y="443" width="20" height="20"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91X-Dd-2lm">
-                                <rect key="frame" x="174.5" y="86" width="65.5" height="21"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91X-Dd-2lm">
+                                <rect key="frame" x="174.5" y="86" width="65" height="21"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,7 +68,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzS-RO-9b5">
-                                                    <rect key="frame" x="303.5" y="31.5" width="82.5" height="21"/>
+                                                    <rect key="frame" x="308.5" y="31.5" width="82.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -78,7 +79,7 @@
                                                 <constraint firstItem="Frc-My-iTX" firstAttribute="top" secondItem="Ebu-2B-4Xs" secondAttribute="top" constant="8" id="3H3-aw-rPh"/>
                                                 <constraint firstItem="5J2-0e-r5H" firstAttribute="leading" secondItem="Ebu-2B-4Xs" secondAttribute="leading" constant="10" id="3ud-JQ-dlI"/>
                                                 <constraint firstItem="Frc-My-iTX" firstAttribute="centerX" secondItem="Ebu-2B-4Xs" secondAttribute="centerX" constant="-15" id="8IE-zb-53d"/>
-                                                <constraint firstAttribute="trailing" secondItem="OzS-RO-9b5" secondAttribute="trailing" constant="15" id="Y40-h9-X9o"/>
+                                                <constraint firstAttribute="trailing" secondItem="OzS-RO-9b5" secondAttribute="trailing" constant="10" id="Y40-h9-X9o"/>
                                                 <constraint firstItem="5J2-0e-r5H" firstAttribute="centerY" secondItem="Ebu-2B-4Xs" secondAttribute="centerY" id="gL0-Jv-Lz5"/>
                                                 <constraint firstItem="y3h-pL-ciD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5J2-0e-r5H" secondAttribute="trailing" constant="20" id="gmy-QY-CRg"/>
                                                 <constraint firstItem="OzS-RO-9b5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="y3h-pL-ciD" secondAttribute="trailing" constant="20" id="gsZ-BC-RQX"/>
@@ -106,18 +107,49 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Zmv-wB-DhT"/>
                                 </connections>
                             </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m66-0f-jBQ">
+                                <rect key="frame" x="27" y="86" width="360" height="34"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="Rp0-zT-fHf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IA6-2U-Vm8">
+                                <rect key="frame" x="27" y="120" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelSearchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uRb-CK-mBI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPG-Zw-Wm3">
+                                <rect key="frame" x="339" y="120" width="48" height="30"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yfl-bX-9gi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="tPG-Zw-Wm3" firstAttribute="trailing" secondItem="m66-0f-jBQ" secondAttribute="trailing" id="2vv-O3-gez"/>
                             <constraint firstItem="91X-Dd-2lm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="76H-0U-JbF"/>
+                            <constraint firstItem="IA6-2U-Vm8" firstAttribute="leading" secondItem="m66-0f-jBQ" secondAttribute="leading" id="ExX-3n-LOm"/>
+                            <constraint firstItem="m66-0f-jBQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="FZH-cJ-4aS"/>
+                            <constraint firstItem="tPG-Zw-Wm3" firstAttribute="top" secondItem="m66-0f-jBQ" secondAttribute="bottom" id="K6f-81-ZOI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9HE-Xp-81v" secondAttribute="bottom" id="LF0-at-ZgL"/>
                             <constraint firstItem="9HE-Xp-81v" firstAttribute="top" secondItem="Xb0-01-u68" secondAttribute="bottom" constant="20" id="NM0-b5-qEh"/>
+                            <constraint firstItem="tPG-Zw-Wm3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IA6-2U-Vm8" secondAttribute="trailing" constant="250" id="NrY-eN-CYt"/>
                             <constraint firstItem="91X-Dd-2lm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QRb-ZV-KeL"/>
+                            <constraint firstItem="IA6-2U-Vm8" firstAttribute="top" secondItem="m66-0f-jBQ" secondAttribute="bottom" id="RAU-W6-UQd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9HE-Xp-81v" secondAttribute="trailing" constant="10" id="SiI-vB-9aI"/>
                             <constraint firstItem="Xb0-01-u68" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ccf-wT-GLc"/>
                             <constraint firstItem="9HE-Xp-81v" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cgB-Vn-Y2y"/>
                             <constraint firstItem="tTY-yk-NhF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gSo-76-hdN"/>
                             <constraint firstItem="tTY-yk-NhF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="juH-ca-ira"/>
+                            <constraint firstItem="m66-0f-jBQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="oZI-9e-fCu"/>
                             <constraint firstItem="Xb0-01-u68" firstAttribute="top" secondItem="91X-Dd-2lm" secondAttribute="bottom" constant="50" id="r0r-rv-JUb"/>
                             <constraint firstItem="9HE-Xp-81v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="rbb-fO-5bD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9HE-Xp-81v" secondAttribute="trailing" constant="10" id="zI6-W8-dTn"/>
@@ -126,7 +158,10 @@
                     </view>
                     <connections>
                         <outlet property="forecastList" destination="9HE-Xp-81v" id="LEC-OG-ip7"/>
+                        <outlet property="locationCancelSearchButton" destination="IA6-2U-Vm8" id="uM9-VM-a2T"/>
                         <outlet property="locationLabel" destination="91X-Dd-2lm" id="zk6-T3-idB"/>
+                        <outlet property="locationSearchButton" destination="tPG-Zw-Wm3" id="kLo-DM-CvT"/>
+                        <outlet property="locationSearchTextField" destination="m66-0f-jBQ" id="QVu-n6-v7R"/>
                         <outlet property="spinner" destination="tTY-yk-NhF" id="0XM-3N-urx"/>
                         <outlet property="temperatureLabel" destination="Xb0-01-u68" id="Qj9-kQ-LeF"/>
                     </connections>

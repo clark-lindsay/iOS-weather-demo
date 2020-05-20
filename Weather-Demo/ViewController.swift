@@ -11,34 +11,82 @@ import UIKit
 enum ViewState {
     case Loading
     case DisplayingWeather
+    case SearchForWeather
 }
 
-class ViewController: UIViewController, UICollectionViewDelegate {
+class ViewController: UIViewController, UICollectionViewDelegate, LocationManagerDelegate {
+    func currentLocationDetermined(placeDescription: [String: String]) {
+        if let locality = placeDescription["locality"], let administrativeArae = placeDescription["administrativeArea"] {
+            weatherDataModel.fetchWeatherForLocation(named: "\(locality), \(administrativeArae)")
+        } else {
+            print("This place is un-named, and thus cannot have data fetched for it.")
+        }
+    }
     
+    func unableToDetermineCurrentLocation() {
+        print("Unable to determine location.")
+        configureViewForState(state: .DisplayingWeather)
+    }
+    
+    
+    @IBOutlet weak var locationSearchTextField: UITextField!
+    @IBOutlet weak var locationSearchButton: UIButton!
+    @IBAction func searchButtonPressed(_ sender: Any) {
+        searchForWeather()
+    }
+    @IBOutlet weak var locationCancelSearchButton: UIButton!
+    @IBAction func cancelSearchButtonPressed(_ sender: Any) {
+        configureViewForState(state: .DisplayingWeather)
+    }
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var forecastList: UICollectionView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     var weatherDataModel: WeatherDataModel!
+    var locationManager: LocationManager!
+    var locationTapGestureRecognizer: UITapGestureRecognizer!
     var viewState: ViewState = .Loading
     
     override init(nibName: String?, bundle: Bundle?) {
         super.init(nibName: nibName, bundle: bundle)
-        self.initializeWeatherModel()
+        self.initializeProperties()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.initializeWeatherModel()
+        self.initializeProperties()
     }
     
-    func initializeWeatherModel() {
+    func initializeProperties() {
         weatherDataModel = WeatherDataModel(delegate: self)
+        locationManager = LocationManager(delegate: self)
+    }
+    
+    @objc func locationTapped(_ recognizer: UITapGestureRecognizer) {
+        configureViewForState(state: .SearchForWeather)
+    }
+    
+   func setupLabelTap() {
+        let labelTap = UITapGestureRecognizer(target: self, action: #selector(self.locationTapped(_:)))
+        locationLabel.isUserInteractionEnabled = true
+        locationLabel.addGestureRecognizer(labelTap)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLabelTap()
         loadWeather()
+    }
+    
+    func searchForWeather() {
+        locationSearchTextField.resignFirstResponder()
+        let location = locationSearchTextField.text!
+        configureViewForState(state: .Loading)
+        var locationDescription: [String: String] = [:]
+        let locationChunks = location.split(separator: ",")
+        locationDescription["locality"] = String(locationChunks[0])
+        locationDescription["administrativeArea"] = String(locationChunks[1])
+        currentLocationDetermined(placeDescription: locationDescription)
     }
     
     func loadWeather() {
@@ -53,11 +101,27 @@ class ViewController: UIViewController, UICollectionViewDelegate {
             temperatureLabel.isHidden = true
             forecastList.isHidden = true
             spinner.isHidden = false
-        } else {
+            locationSearchTextField.isHidden = true
+            locationSearchButton.isHidden = true
+            locationCancelSearchButton.isHidden = true
+        } else if viewState == .SearchForWeather {
+            locationLabel.isHidden = true
+            temperatureLabel.isHidden = true
+            forecastList.isHidden = true
+            locationSearchTextField.isHidden = false
+            locationSearchButton.isHidden = false
+            locationCancelSearchButton.isHidden = false
+            spinner.isHidden = true
+            locationSearchTextField.becomeFirstResponder()
+        }
+        else {
             locationLabel.isHidden = false
             temperatureLabel.isHidden = false
             forecastList.isHidden = false
             spinner.isHidden = true
+            locationSearchTextField.isHidden = true
+            locationSearchButton.isHidden = true
+            locationCancelSearchButton.isHidden = true
         }
     }
     
@@ -113,4 +177,3 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
            return CGSize(width: view.frame.width - 20, height: 80)
        }
 }
-
