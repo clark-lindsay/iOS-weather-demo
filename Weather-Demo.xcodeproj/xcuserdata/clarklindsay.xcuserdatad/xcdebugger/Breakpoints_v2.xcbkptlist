@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "AB5BEDAD-CE2A-4D38-81A1-2C815BE8583F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather-Demo/ViewController.swift"
@@ -46,8 +46,8 @@
             filePath = "Weather-Demo/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "currentLocationDetermined(placeDescription:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -56,7 +56,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F1317083-B065-44E6-B25E-41EE4E1762E9"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather-Demo/ViewController.swift"
@@ -78,8 +78,8 @@
             filePath = "WeatherDataModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "weatherFetchComplete(results:error:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -87,49 +87,112 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2136B051-DCA4-40F3-A814-601DF5F7279B"
+            uuid = "1284316D-A949-4397-B2DF-2B3BC4368D05"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HTTPCLient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "parseResource(parseable:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2FEEAEAB-2281-4940-AAD3-80407AFEA0CB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WeatherDataModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "fetchWeatherForLocation(named:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "2136B051-DCA4-40F3-A814-601DF5F7279B - 69904cdfdad042aa"
+                  uuid = "2FEEAEAB-2281-4940-AAD3-80407AFEA0CB - ab527470f7c878e3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Weather_Demo.WeatherDataModel.fetchWeatherForLocation(named: Swift.String) -&gt; ()"
+                  symbolName = "closure #1 (Weather_Demo.ParseResult&lt;Weather_Demo.WeatherData&gt;) -&gt; () in Weather_Demo.WeatherDataModel.fetchWeatherForLocation(named: Swift.String) -&gt; ()"
                   moduleName = "Weather-Demo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/clarklindsay/Documents/code/Weather-Demo/WeatherDataModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "869">
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "141">
                </Location>
                <Location
-                  uuid = "2136B051-DCA4-40F3-A814-601DF5F7279B - aa315bd3a2f22b5a"
+                  uuid = "2FEEAEAB-2281-4940-AAD3-80407AFEA0CB - ab527470f7c878e3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Weather_Demo.WeatherDataModel.fetchWeatherForLocation(named: Swift.String) -&gt; ()"
+                  symbolName = "closure #1 (Weather_Demo.ParseResult&lt;Weather_Demo.WeatherData&gt;) -&gt; () in Weather_Demo.WeatherDataModel.fetchWeatherForLocation(named: Swift.String) -&gt; ()"
                   moduleName = "Weather-Demo"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/clarklindsay/Documents/code/Weather-Demo/WeatherDataModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "68">
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "170">
+               </Location>
+               <Location
+                  uuid = "2FEEAEAB-2281-4940-AAD3-80407AFEA0CB - ab527470f7c878e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Weather_Demo.ParseResult&lt;Weather_Demo.WeatherData&gt;) -&gt; () in Weather_Demo.WeatherDataModel.fetchWeatherForLocation(named: Swift.String) -&gt; ()"
+                  moduleName = "Weather-Demo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/clarklindsay/Documents/code/Weather-Demo/WeatherDataModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "520">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "160577D1-99D9-4C4B-8296-5B2593735553"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "parse(json:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "92EEEB25-A395-4E44-B678-9E2D7BB7F1D2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "parse(json:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

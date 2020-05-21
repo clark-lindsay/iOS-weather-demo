@@ -9,25 +9,21 @@
 import Foundation
 
 protocol WeatherDataDelegate {
-    func weatherDataDidChange(newData: [String: AnyObject]?)
+    func weatherDataDidChange(newData: WeatherData?)
     func errorFetchingWeatherData(error: Error)
 }
 
 class WeatherDataModel {
     private var weatherDataDelegate: WeatherDataDelegate?
     
-    var weatherData: [String: AnyObject]? = [:] {
+    var weatherData: WeatherData? {
         didSet {
             weatherDataDelegate?.weatherDataDidChange(newData: weatherData)
         }
     }
-    var forecasts: [[String: AnyObject]]? {
+    var forecasts: [Forecast]? {
         get {
-            if let forecastList = weatherData?["forecasts"] as? [[String: AnyObject]] {
-                return forecastList
-            } else {
-                return nil
-            }
+            return weatherData?.forecasts
         }
     }
     
@@ -37,34 +33,26 @@ class WeatherDataModel {
     
     func fetchWeatherForLocation(named location: String) {
         let encodedLocation = location.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        let url = URL(string: "http://localhost:3000/weather/location/\(encodedLocation!)")
-        var request: URLRequest = URLRequest(url: url!)
-        request.httpMethod = "GET"
-        let session = URLSession.shared
-        let task = session.dataTask(with: request, completionHandler: {
+        let path = "http://localhost:3000/weather/location/\(encodedLocation!)"
+        let parseableResource = ResourceRequest(path: path, method: .GET)
+        HTTPClient.parseResource(parseable: parseableResource, completion: {
             [weak self]
-            (data, response, error) in
-            if (data != nil) {
-                let json: [String: AnyObject]?
-                do { json = try
-                    JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions()) as? [String: AnyObject]
-                    self?.weatherFetchComplete(results: json!, error: nil)
-                } catch let error {
-                    self?.weatherFetchComplete(results: nil, error: error)
-                }
+            (parseResult: ParseResult<WeatherData>) -> Void in
+            switch parseResult {
+            case .Error(let error):
+                self?.weatherFetchComplete(results: nil, error: error)
+            case .Result(let weatherData):
+                self?.weatherFetchComplete(results: weatherData, error: nil)
             }
         })
-        task.resume()
     }
     
-    func weatherFetchComplete(results: [String: AnyObject]?, error: Error?) {
+    func weatherFetchComplete(results: WeatherData?, error: Error?) {
         DispatchQueue.main.async {
             if let fetchError = error {
                 self.weatherDataDelegate?.errorFetchingWeatherData(error: fetchError)
             } else {
-                if let weatherResults = results {
-                    self.weatherData = weatherResults
-                }
+                self.weatherData = results
             }
             
         }

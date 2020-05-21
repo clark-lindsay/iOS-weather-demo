@@ -122,17 +122,13 @@ class ViewController: UIViewController, UICollectionViewDelegate {
 }
 
 extension ViewController: WeatherDataDelegate {
-    func weatherDataDidChange(newData: [String : AnyObject]?) {
+    func weatherDataDidChange(newData: WeatherData?) {
         if let weatherData = newData {
-            if let currentTemp: Int = weatherData["currentTemperature"] as? Int {
-                temperatureLabel.text = "\(currentTemp)ºF"
-            }
-            if let locationName: String = weatherData["name"] as? String {
-                locationLabel.text = locationName
-            }
+            temperatureLabel.text = "\(weatherData.tempLabel)"
+            locationLabel.text = weatherData.name
             forecastList.reloadData()
+            configureViewForState(state: .DisplayingWeather)
         }
-        configureViewForState(state: .DisplayingWeather)
     }
     
     func errorFetchingWeatherData(error: Error) {
@@ -148,14 +144,10 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "forecastCell", for: indexPath) as! ForecastCell
        let forecast = weatherDataModel.forecasts![indexPath.row]
-        let day = forecast["day"] as! String
-        let high = forecast["high"] as! Int
-        let low = forecast["low"] as! Int
-        let conditions = forecast["text"] as! String
-        cell.forecastDayLabel.text = day
-        cell.highTempLabel.text = "High: \(high)ºF"
-        cell.lowTempLabel.text = "Low: \(low)ºF"
-        cell.conditionsLabel.text = conditions
+        cell.forecastDayLabel.text = forecast.day
+        cell.highTempLabel.text = forecast.highLabel
+        cell.lowTempLabel.text = forecast.lowLabel
+        cell.conditionsLabel.text = forecast.conditions
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8
