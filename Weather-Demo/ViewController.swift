@@ -14,21 +14,7 @@ enum ViewState {
     case SearchForWeather
 }
 
-class ViewController: UIViewController, UICollectionViewDelegate, LocationManagerDelegate {
-    func currentLocationDetermined(placeDescription: [String: String]) {
-        if let locality = placeDescription["locality"], let administrativeArae = placeDescription["administrativeArea"] {
-            weatherDataModel.fetchWeatherForLocation(named: "\(locality), \(administrativeArae)")
-        } else {
-            print("This place is un-named, and thus cannot have data fetched for it.")
-        }
-    }
-    
-    func unableToDetermineCurrentLocation() {
-        print("Unable to determine location.")
-        configureViewForState(state: .DisplayingWeather)
-    }
-    
-    
+class ViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var locationSearchTextField: UITextField!
     @IBOutlet weak var locationSearchButton: UIButton!
     @IBAction func searchButtonPressed(_ sender: Any) {
@@ -38,13 +24,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, LocationManage
     @IBAction func cancelSearchButtonPressed(_ sender: Any) {
         configureViewForState(state: .DisplayingWeather)
     }
+    
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var forecastList: UICollectionView!
+    
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     var weatherDataModel: WeatherDataModel!
     var locationManager: LocationManager!
-    var locationTapGestureRecognizer: UITapGestureRecognizer!
     var viewState: ViewState = .Loading
     
     override init(nibName: String?, bundle: Bundle?) {
@@ -62,20 +50,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, LocationManage
         locationManager = LocationManager(delegate: self)
     }
     
-    @objc func locationTapped(_ recognizer: UITapGestureRecognizer) {
-        configureViewForState(state: .SearchForWeather)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupLocationLabelTap()
+        loadWeather()
     }
     
-   func setupLabelTap() {
-        let labelTap = UITapGestureRecognizer(target: self, action: #selector(self.locationTapped(_:)))
+    func setupLocationLabelTap() {
+        let labelTap = UITapGestureRecognizer(target: self, action: #selector(self.locationLabelTapped(_:)))
         locationLabel.isUserInteractionEnabled = true
         locationLabel.addGestureRecognizer(labelTap)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupLabelTap()
-        loadWeather()
+    @objc func locationLabelTapped(_ recognizer: UITapGestureRecognizer) {
+        configureViewForState(state: .SearchForWeather)
     }
     
     func searchForWeather() {
@@ -176,4 +164,19 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
            return CGSize(width: view.frame.width - 20, height: 80)
        }
+}
+
+extension ViewController: LocationManagerDelegate {
+    func currentLocationDetermined(placeDescription: [String: String]) {
+        if let locality = placeDescription["locality"], let administrativeArae = placeDescription["administrativeArea"] {
+            weatherDataModel.fetchWeatherForLocation(named: "\(locality), \(administrativeArae)")
+        } else {
+            print("This place is un-named, and thus cannot have data fetched for it.")
+        }
+    }
+    
+    func unableToDetermineCurrentLocation() {
+        print("Unable to determine location.")
+        configureViewForState(state: .DisplayingWeather)
+    }
 }
