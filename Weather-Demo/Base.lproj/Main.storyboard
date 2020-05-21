@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -130,6 +130,12 @@
                                     <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yfl-bX-9gi"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading weather data..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvR-B9-hhJ">
+                                <rect key="frame" x="117.5" y="478" width="179.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
@@ -152,12 +158,15 @@
                             <constraint firstItem="m66-0f-jBQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="oZI-9e-fCu"/>
                             <constraint firstItem="Xb0-01-u68" firstAttribute="top" secondItem="91X-Dd-2lm" secondAttribute="bottom" constant="50" id="r0r-rv-JUb"/>
                             <constraint firstItem="9HE-Xp-81v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="rbb-fO-5bD"/>
+                            <constraint firstItem="qvR-B9-hhJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="srV-Vu-voD"/>
+                            <constraint firstItem="qvR-B9-hhJ" firstAttribute="top" secondItem="tTY-yk-NhF" secondAttribute="bottom" constant="15" id="u3L-D5-SeX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9HE-Xp-81v" secondAttribute="trailing" constant="10" id="zI6-W8-dTn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="forecastList" destination="9HE-Xp-81v" id="LEC-OG-ip7"/>
+                        <outlet property="loadingLabel" destination="qvR-B9-hhJ" id="Vjg-kq-f0I"/>
                         <outlet property="locationCancelSearchButton" destination="IA6-2U-Vm8" id="uM9-VM-a2T"/>
                         <outlet property="locationLabel" destination="91X-Dd-2lm" id="zk6-T3-idB"/>
                         <outlet property="locationSearchButton" destination="tPG-Zw-Wm3" id="kLo-DM-CvT"/>

@@ -38,8 +38,10 @@ class WeatherDataModel {
     func fetchWeatherForLocation(named location: String) {
         let encodedLocation = location.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         let url = URL(string: "http://localhost:3000/weather/location/\(encodedLocation!)")
+        var request: URLRequest = URLRequest(url: url!)
+        request.httpMethod = "GET"
         let session = URLSession.shared
-        let task = session.dataTask(with: url!, completionHandler: {
+        let task = session.dataTask(with: request, completionHandler: {
             [weak self]
             (data, response, error) in
             if (data != nil) {

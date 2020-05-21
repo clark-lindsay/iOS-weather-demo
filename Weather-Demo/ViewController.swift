@@ -30,6 +30,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var forecastList: UICollectionView!
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var loadingLabel: UILabel!
     
     var weatherDataModel: WeatherDataModel!
     var locationManager: LocationManager!
@@ -79,7 +80,6 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     
     func loadWeather() {
         configureViewForState(state: .Loading)
-        weatherDataModel.fetchWeatherForLocation(named: "Arvada,CO")
     }
     
     func configureViewForState(state: ViewState) {
@@ -89,6 +89,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
             temperatureLabel.isHidden = true
             forecastList.isHidden = true
             spinner.isHidden = false
+            loadingLabel.isHidden = false
             locationSearchTextField.isHidden = true
             locationSearchButton.isHidden = true
             locationCancelSearchButton.isHidden = true
@@ -100,6 +101,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
             locationSearchButton.isHidden = false
             locationCancelSearchButton.isHidden = false
             spinner.isHidden = true
+            loadingLabel.isHidden = true
             locationSearchTextField.becomeFirstResponder()
         }
         else {
@@ -107,6 +109,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
             temperatureLabel.isHidden = false
             forecastList.isHidden = false
             spinner.isHidden = true
+            loadingLabel.isHidden = true
             locationSearchTextField.isHidden = true
             locationSearchButton.isHidden = true
             locationCancelSearchButton.isHidden = true
