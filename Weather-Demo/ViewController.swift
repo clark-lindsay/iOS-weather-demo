@@ -82,6 +82,10 @@ class ViewController: UIViewController, UICollectionViewDelegate {
         configureViewForState(state: .Loading)
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+    }
+    
     func configureViewForState(state: ViewState) {
         self.viewState = state
         if viewState == .Loading {
@@ -115,10 +119,6 @@ class ViewController: UIViewController, UICollectionViewDelegate {
             locationCancelSearchButton.isHidden = true
         }
     }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-    }
 }
 
 extension ViewController: WeatherDataDelegate {
@@ -148,16 +148,30 @@ extension ViewController: UICollectionViewDataSource {
         cell.highTempLabel.text = forecast.highLabel
         cell.lowTempLabel.text = forecast.lowLabel
         cell.conditionsLabel.text = forecast.conditions
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 8
         return cell
     }
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-           return CGSize(width: view.frame.width - 20, height: 80)
+           let regularHorizontalSizeClassCellWidth: CGFloat = 150
+           let regularHorizontalSizeClassCellHeight: CGFloat = 150
+           let compactHorizontalSizeClassCellHeight: CGFloat = 80
+           
+           let viewWidth = view.frame.width
+           let layout = forecastList.collectionViewLayout as! UICollectionViewFlowLayout
+           layout.minimumInteritemSpacing = 0
+           let horizontalSizeClass = traitCollection.horizontalSizeClass
+           let verticalSizeClass = traitCollection.verticalSizeClass
+           
+           if horizontalSizeClass == .compact && verticalSizeClass == .regular {
+               return CGSize(width: viewWidth, height: compactHorizontalSizeClassCellHeight)
+           } else if verticalSizeClass == .compact {
+               let cellSize = viewWidth / 5
+               return CGSize(width: cellSize, height: cellSize)
+           } else {
+               return CGSize(width: regularHorizontalSizeClassCellWidth, height: regularHorizontalSizeClassCellHeight)
+           }
        }
 }
 

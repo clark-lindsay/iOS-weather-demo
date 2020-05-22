@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad11_0rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,14 +13,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Weather_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1194" height="834"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="tTY-yk-NhF">
-                                <rect key="frame" x="587" y="397" width="20" height="20"/>
+                                <rect key="frame" x="197" y="443" width="20" height="20"/>
                             </activityIndicatorView>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91X-Dd-2lm">
-                                <rect key="frame" x="220.5" y="322" width="1075" height="20.5"/>
+                                <rect key="frame" x="20.666666666666629" y="39.666666666666664" width="372.66666666666674" height="20.333333333333336"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="uVi-ak-Wcb"/>
@@ -44,7 +44,7 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000ºF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xb0-01-u68">
-                                <rect key="frame" x="220.5" y="257" width="343" height="150"/>
+                                <rect key="frame" x="35.666666666666657" y="68" width="343" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="nH2-t4-ZWT"/>
                                     <constraint firstAttribute="width" constant="343" id="vrg-lb-jIB"/>
@@ -54,8 +54,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9HE-Xp-81v">
-                                <rect key="frame" x="10" y="427" width="1174" height="387"/>
+                                <rect key="frame" x="10" y="238" width="394" height="624"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="750" id="mzF-Bo-rNA"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="e2W-yW-v5K">
                                     <size key="itemSize" width="401" height="84"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -64,20 +67,20 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="forecastCell" id="faL-Mb-ypM" customClass="ForecastCell" customModule="Weather_Demo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="401" height="84"/>
+                                        <rect key="frame" x="-3.6666666666666665" y="0.0" width="401" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ebu-2B-4Xs" customClass="ForecastCell" customModule="Weather_Demo" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="401" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ForecastDay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5J2-0e-r5H">
-                                                    <rect key="frame" x="10" y="31.5" width="96" height="21"/>
+                                                    <rect key="frame" x="10" y="32" width="96" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000ºF High" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frc-My-iTX">
-                                                    <rect key="frame" x="141.5" y="8" width="88" height="21"/>
+                                                    <rect key="frame" x="141.66666666666666" y="8" width="88" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -89,24 +92,88 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzS-RO-9b5">
-                                                    <rect key="frame" x="308.5" y="31.5" width="82.5" height="21"/>
+                                                    <rect key="frame" x="308.66666666666669" y="31.666666666666671" width="82.333333333333314" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="y3h-pL-ciD" secondAttribute="bottom" constant="8" id="2RA-p8-pW1"/>
-                                                <constraint firstItem="Frc-My-iTX" firstAttribute="top" secondItem="Ebu-2B-4Xs" secondAttribute="top" constant="8" id="3H3-aw-rPh"/>
-                                                <constraint firstItem="5J2-0e-r5H" firstAttribute="leading" secondItem="Ebu-2B-4Xs" secondAttribute="leading" constant="10" id="3ud-JQ-dlI"/>
-                                                <constraint firstItem="Frc-My-iTX" firstAttribute="centerX" secondItem="Ebu-2B-4Xs" secondAttribute="centerX" constant="-15" id="8IE-zb-53d"/>
-                                                <constraint firstAttribute="trailing" secondItem="OzS-RO-9b5" secondAttribute="trailing" constant="10" id="Y40-h9-X9o"/>
-                                                <constraint firstItem="5J2-0e-r5H" firstAttribute="centerY" secondItem="Ebu-2B-4Xs" secondAttribute="centerY" id="gL0-Jv-Lz5"/>
-                                                <constraint firstItem="y3h-pL-ciD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5J2-0e-r5H" secondAttribute="trailing" constant="5" id="gmy-QY-CRg"/>
-                                                <constraint firstItem="OzS-RO-9b5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="y3h-pL-ciD" secondAttribute="trailing" constant="5" id="gsZ-BC-RQX"/>
-                                                <constraint firstItem="y3h-pL-ciD" firstAttribute="centerX" secondItem="Ebu-2B-4Xs" secondAttribute="centerX" constant="-15" id="kWS-d2-Iu8"/>
-                                                <constraint firstItem="OzS-RO-9b5" firstAttribute="centerY" secondItem="Ebu-2B-4Xs" secondAttribute="centerY" id="yeo-vY-9sZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="y3h-pL-ciD" secondAttribute="bottom" priority="750" constant="8" id="2RA-p8-pW1"/>
+                                                <constraint firstItem="Frc-My-iTX" firstAttribute="top" secondItem="Ebu-2B-4Xs" secondAttribute="top" priority="750" constant="8" id="3H3-aw-rPh"/>
+                                                <constraint firstItem="5J2-0e-r5H" firstAttribute="leading" secondItem="Ebu-2B-4Xs" secondAttribute="leading" priority="750" constant="10" id="3ud-JQ-dlI"/>
+                                                <constraint firstItem="y3h-pL-ciD" firstAttribute="top" secondItem="Ebu-2B-4Xs" secondAttribute="top" constant="90" id="7hr-2V-SY4"/>
+                                                <constraint firstItem="Frc-My-iTX" firstAttribute="centerX" secondItem="Ebu-2B-4Xs" secondAttribute="centerX" priority="750" constant="-15" id="8IE-zb-53d"/>
+                                                <constraint firstItem="5J2-0e-r5H" firstAttribute="top" secondItem="Ebu-2B-4Xs" secondAttribute="top" constant="6" id="CcL-tc-f2d"/>
+                                                <constraint firstItem="Frc-My-iTX" firstAttribute="centerX" secondItem="Ebu-2B-4Xs" secondAttribute="centerX" id="SOs-nW-eh6"/>
+                                                <constraint firstAttribute="trailing" secondItem="OzS-RO-9b5" secondAttribute="trailing" priority="750" constant="10" id="Y40-h9-X9o"/>
+                                                <constraint firstItem="5J2-0e-r5H" firstAttribute="centerY" secondItem="Ebu-2B-4Xs" secondAttribute="centerY" priority="750" id="gL0-Jv-Lz5"/>
+                                                <constraint firstItem="y3h-pL-ciD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5J2-0e-r5H" secondAttribute="trailing" priority="750" constant="5" id="gmy-QY-CRg"/>
+                                                <constraint firstItem="OzS-RO-9b5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="y3h-pL-ciD" secondAttribute="trailing" priority="750" constant="5" id="gsZ-BC-RQX"/>
+                                                <constraint firstItem="Frc-My-iTX" firstAttribute="top" secondItem="Ebu-2B-4Xs" secondAttribute="top" constant="70" id="iCG-LT-4hq"/>
+                                                <constraint firstItem="OzS-RO-9b5" firstAttribute="top" secondItem="Ebu-2B-4Xs" secondAttribute="top" constant="40" id="ioy-q1-wef"/>
+                                                <constraint firstItem="y3h-pL-ciD" firstAttribute="centerX" secondItem="Ebu-2B-4Xs" secondAttribute="centerX" priority="750" constant="-15" id="kWS-d2-Iu8"/>
+                                                <constraint firstItem="5J2-0e-r5H" firstAttribute="centerX" secondItem="Ebu-2B-4Xs" secondAttribute="centerX" id="lAZ-Nq-OIM"/>
+                                                <constraint firstItem="y3h-pL-ciD" firstAttribute="centerX" secondItem="Ebu-2B-4Xs" secondAttribute="centerX" id="mf1-PY-pMF"/>
+                                                <constraint firstItem="OzS-RO-9b5" firstAttribute="centerX" secondItem="Ebu-2B-4Xs" secondAttribute="centerX" id="pDq-OZ-pK6"/>
+                                                <constraint firstItem="OzS-RO-9b5" firstAttribute="centerY" secondItem="Ebu-2B-4Xs" secondAttribute="centerY" priority="750" id="yeo-vY-9sZ"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="CcL-tc-f2d"/>
+                                                    <exclude reference="lAZ-Nq-OIM"/>
+                                                    <exclude reference="ioy-q1-wef"/>
+                                                    <exclude reference="pDq-OZ-pK6"/>
+                                                    <exclude reference="SOs-nW-eh6"/>
+                                                    <exclude reference="iCG-LT-4hq"/>
+                                                    <exclude reference="7hr-2V-SY4"/>
+                                                    <exclude reference="mf1-PY-pMF"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=compact-widthClass=regular">
+                                                <mask key="constraints">
+                                                    <exclude reference="3ud-JQ-dlI"/>
+                                                    <include reference="CcL-tc-f2d"/>
+                                                    <exclude reference="gL0-Jv-Lz5"/>
+                                                    <include reference="lAZ-Nq-OIM"/>
+                                                    <exclude reference="Y40-h9-X9o"/>
+                                                    <exclude reference="gsZ-BC-RQX"/>
+                                                    <include reference="ioy-q1-wef"/>
+                                                    <include reference="pDq-OZ-pK6"/>
+                                                    <exclude reference="yeo-vY-9sZ"/>
+                                                    <exclude reference="3H3-aw-rPh"/>
+                                                    <exclude reference="8IE-zb-53d"/>
+                                                    <include reference="SOs-nW-eh6"/>
+                                                    <include reference="iCG-LT-4hq"/>
+                                                    <exclude reference="2RA-p8-pW1"/>
+                                                    <include reference="7hr-2V-SY4"/>
+                                                    <exclude reference="gmy-QY-CRg"/>
+                                                    <exclude reference="kWS-d2-Iu8"/>
+                                                    <include reference="mf1-PY-pMF"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <mask key="constraints">
+                                                    <exclude reference="3ud-JQ-dlI"/>
+                                                    <include reference="CcL-tc-f2d"/>
+                                                    <exclude reference="gL0-Jv-Lz5"/>
+                                                    <include reference="lAZ-Nq-OIM"/>
+                                                    <exclude reference="Y40-h9-X9o"/>
+                                                    <exclude reference="gsZ-BC-RQX"/>
+                                                    <include reference="ioy-q1-wef"/>
+                                                    <include reference="pDq-OZ-pK6"/>
+                                                    <exclude reference="yeo-vY-9sZ"/>
+                                                    <exclude reference="3H3-aw-rPh"/>
+                                                    <exclude reference="8IE-zb-53d"/>
+                                                    <include reference="SOs-nW-eh6"/>
+                                                    <include reference="iCG-LT-4hq"/>
+                                                    <exclude reference="2RA-p8-pW1"/>
+                                                    <include reference="7hr-2V-SY4"/>
+                                                    <exclude reference="gmy-QY-CRg"/>
+                                                    <exclude reference="kWS-d2-Iu8"/>
+                                                    <include reference="mf1-PY-pMF"/>
+                                                </mask>
+                                            </variation>
                                             <connections>
                                                 <outlet property="conditionsLabel" destination="OzS-RO-9b5" id="r6n-K7-ZRi"/>
                                                 <outlet property="forecastDayLabel" destination="5J2-0e-r5H" id="cJc-my-9ah"/>
@@ -123,13 +190,23 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="mzF-Bo-rNA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="mzF-Bo-rNA"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="qOU-Bf-6Cj"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Zmv-wB-DhT"/>
                                 </connections>
                             </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m66-0f-jBQ">
-                                <rect key="frame" x="417" y="42" width="360" height="34"/>
+                                <rect key="frame" x="27" y="86" width="360" height="34"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="360" id="Rp0-zT-fHf"/>
@@ -138,21 +215,21 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IA6-2U-Vm8">
-                                <rect key="frame" x="417" y="76" width="48" height="30"/>
+                                <rect key="frame" x="27" y="120" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancelSearchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uRb-CK-mBI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPG-Zw-Wm3">
-                                <rect key="frame" x="729" y="76" width="48" height="30"/>
+                                <rect key="frame" x="339" y="120" width="48" height="30"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yfl-bX-9gi"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading weather data..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvR-B9-hhJ">
-                                <rect key="frame" x="507.5" y="432" width="179.5" height="21"/>
+                                <rect key="frame" x="117.66666666666669" y="478" width="179" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -178,7 +255,6 @@
                             <constraint firstItem="91X-Dd-2lm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QRb-ZV-KeL"/>
                             <constraint firstItem="IA6-2U-Vm8" firstAttribute="top" secondItem="m66-0f-jBQ" secondAttribute="bottom" id="RAU-W6-UQd"/>
                             <constraint firstItem="91X-Dd-2lm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="RjQ-wl-miH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9HE-Xp-81v" secondAttribute="trailing" constant="10" id="SiI-vB-9aI"/>
                             <constraint firstItem="91X-Dd-2lm" firstAttribute="trailing" secondItem="Xb0-01-u68" secondAttribute="trailing" id="Wbh-s5-Waw"/>
                             <constraint firstItem="Xb0-01-u68" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-205" id="ccf-wT-GLc"/>
                             <constraint firstItem="9HE-Xp-81v" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cgB-Vn-Y2y"/>
@@ -244,10 +320,12 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
+                                <exclude reference="zI6-W8-dTn"/>
                                 <include reference="B0m-R3-lwm"/>
                                 <exclude reference="JlJ-kt-XUB"/>
                                 <include reference="ccf-wT-GLc"/>
                                 <exclude reference="r0r-rv-JUb"/>
+                                <exclude reference="rbb-fO-5bD"/>
                                 <exclude reference="Dzw-2p-4w8"/>
                                 <include reference="ELX-xU-XJe"/>
                                 <exclude reference="QRb-ZV-KeL"/>
