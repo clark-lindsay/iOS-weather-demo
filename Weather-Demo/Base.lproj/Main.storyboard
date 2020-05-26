@@ -60,21 +60,21 @@
                                     <constraint firstAttribute="width" constant="750" id="mzF-Bo-rNA"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="e2W-yW-v5K">
-                                    <size key="itemSize" width="401" height="84"/>
+                                    <size key="itemSize" width="401" height="133"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="forecastCell" id="faL-Mb-ypM" customClass="ForecastCell" customModule="Weather_Demo" customModuleProvider="target">
-                                        <rect key="frame" x="-3.6666666666666665" y="0.0" width="401" height="84"/>
+                                        <rect key="frame" x="-3.6666666666666665" y="0.0" width="401" height="133"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ebu-2B-4Xs" customClass="ForecastCell" customModule="Weather_Demo" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="401" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="401" height="133"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ForecastDay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5J2-0e-r5H">
-                                                    <rect key="frame" x="10" y="32" width="96" height="20.333333333333329"/>
+                                                    <rect key="frame" x="10" y="56.333333333333336" width="96" height="20.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -86,13 +86,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000ºF Low" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3h-pL-ciD">
-                                                    <rect key="frame" x="144" y="55" width="83" height="21"/>
+                                                    <rect key="frame" x="144" y="104" width="83" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzS-RO-9b5">
-                                                    <rect key="frame" x="308.66666666666669" y="31.666666666666671" width="82.333333333333314" height="21"/>
+                                                    <rect key="frame" x="308.66666666666669" y="56" width="82.333333333333314" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -122,12 +122,12 @@
                                                 <mask key="constraints">
                                                     <exclude reference="CcL-tc-f2d"/>
                                                     <exclude reference="lAZ-Nq-OIM"/>
-                                                    <exclude reference="ioy-q1-wef"/>
-                                                    <exclude reference="pDq-OZ-pK6"/>
                                                     <exclude reference="SOs-nW-eh6"/>
                                                     <exclude reference="iCG-LT-4hq"/>
                                                     <exclude reference="7hr-2V-SY4"/>
                                                     <exclude reference="mf1-PY-pMF"/>
+                                                    <exclude reference="ioy-q1-wef"/>
+                                                    <exclude reference="pDq-OZ-pK6"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=compact-widthClass=regular">
@@ -136,11 +136,6 @@
                                                     <include reference="CcL-tc-f2d"/>
                                                     <exclude reference="gL0-Jv-Lz5"/>
                                                     <include reference="lAZ-Nq-OIM"/>
-                                                    <exclude reference="Y40-h9-X9o"/>
-                                                    <exclude reference="gsZ-BC-RQX"/>
-                                                    <include reference="ioy-q1-wef"/>
-                                                    <include reference="pDq-OZ-pK6"/>
-                                                    <exclude reference="yeo-vY-9sZ"/>
                                                     <exclude reference="3H3-aw-rPh"/>
                                                     <exclude reference="8IE-zb-53d"/>
                                                     <include reference="SOs-nW-eh6"/>
@@ -150,6 +145,11 @@
                                                     <exclude reference="gmy-QY-CRg"/>
                                                     <exclude reference="kWS-d2-Iu8"/>
                                                     <include reference="mf1-PY-pMF"/>
+                                                    <exclude reference="Y40-h9-X9o"/>
+                                                    <exclude reference="gsZ-BC-RQX"/>
+                                                    <include reference="ioy-q1-wef"/>
+                                                    <include reference="pDq-OZ-pK6"/>
+                                                    <exclude reference="yeo-vY-9sZ"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=regular">
@@ -158,11 +158,6 @@
                                                     <include reference="CcL-tc-f2d"/>
                                                     <exclude reference="gL0-Jv-Lz5"/>
                                                     <include reference="lAZ-Nq-OIM"/>
-                                                    <exclude reference="Y40-h9-X9o"/>
-                                                    <exclude reference="gsZ-BC-RQX"/>
-                                                    <include reference="ioy-q1-wef"/>
-                                                    <include reference="pDq-OZ-pK6"/>
-                                                    <exclude reference="yeo-vY-9sZ"/>
                                                     <exclude reference="3H3-aw-rPh"/>
                                                     <exclude reference="8IE-zb-53d"/>
                                                     <include reference="SOs-nW-eh6"/>
@@ -172,6 +167,11 @@
                                                     <exclude reference="gmy-QY-CRg"/>
                                                     <exclude reference="kWS-d2-Iu8"/>
                                                     <include reference="mf1-PY-pMF"/>
+                                                    <exclude reference="Y40-h9-X9o"/>
+                                                    <exclude reference="gsZ-BC-RQX"/>
+                                                    <include reference="ioy-q1-wef"/>
+                                                    <include reference="pDq-OZ-pK6"/>
+                                                    <exclude reference="yeo-vY-9sZ"/>
                                                 </mask>
                                             </variation>
                                             <connections>
@@ -181,7 +181,7 @@
                                                 <outlet property="lowTempLabel" destination="y3h-pL-ciD" id="hEs-rZ-UIZ"/>
                                             </connections>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="401" height="84"/>
+                                        <size key="customSize" width="401" height="133"/>
                                         <connections>
                                             <outlet property="conditionsLabel" destination="OzS-RO-9b5" id="u1W-pD-qrz"/>
                                             <outlet property="forecastDayLabel" destination="5J2-0e-r5H" id="DbN-3j-g4g"/>
@@ -277,10 +277,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="4Ou-NK-ohM"/>
-                                <exclude reference="7f4-Lz-2LU"/>
-                                <exclude reference="B0m-R3-lwm"/>
-                                <exclude reference="ccf-wT-GLc"/>
                                 <exclude reference="A2v-cE-IW8"/>
                                 <exclude reference="ELX-xU-XJe"/>
                                 <exclude reference="RjQ-wl-miH"/>
@@ -292,40 +288,39 @@
                                 <exclude reference="wcg-UU-pRI"/>
                                 <exclude reference="wj3-GY-dlY"/>
                                 <exclude reference="yH8-Uu-MA5"/>
+                                <exclude reference="4Ou-NK-ohM"/>
+                                <exclude reference="7f4-Lz-2LU"/>
+                                <exclude reference="B0m-R3-lwm"/>
+                                <exclude reference="ccf-wT-GLc"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
-                                <include reference="4Ou-NK-ohM"/>
-                                <exclude reference="ccf-wT-GLc"/>
                                 <exclude reference="QRb-ZV-KeL"/>
                                 <include reference="cm8-22-k2A"/>
+                                <include reference="4Ou-NK-ohM"/>
+                                <exclude reference="ccf-wT-GLc"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
-                                <exclude reference="r0r-rv-JUb"/>
                                 <include reference="A2v-cE-IW8"/>
                                 <exclude reference="Dzw-2p-4w8"/>
                                 <exclude reference="cm8-22-k2A"/>
                                 <include reference="ogO-0n-AAs"/>
                                 <include reference="wcg-UU-pRI"/>
+                                <exclude reference="r0r-rv-JUb"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="7f4-Lz-2LU"/>
                                 <exclude reference="wj3-GY-dlY"/>
+                                <include reference="7f4-Lz-2LU"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
                                 <exclude reference="zI6-W8-dTn"/>
-                                <include reference="B0m-R3-lwm"/>
-                                <exclude reference="JlJ-kt-XUB"/>
-                                <include reference="ccf-wT-GLc"/>
-                                <exclude reference="r0r-rv-JUb"/>
-                                <exclude reference="rbb-fO-5bD"/>
                                 <exclude reference="Dzw-2p-4w8"/>
                                 <include reference="ELX-xU-XJe"/>
                                 <exclude reference="QRb-ZV-KeL"/>
@@ -334,6 +329,11 @@
                                 <include reference="fRr-dt-odm"/>
                                 <include reference="ibf-ie-Vd2"/>
                                 <include reference="yH8-Uu-MA5"/>
+                                <include reference="B0m-R3-lwm"/>
+                                <exclude reference="JlJ-kt-XUB"/>
+                                <include reference="ccf-wT-GLc"/>
+                                <exclude reference="r0r-rv-JUb"/>
+                                <exclude reference="rbb-fO-5bD"/>
                             </mask>
                         </variation>
                     </view>
@@ -350,7 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102.89855072463769" y="137.94642857142856"/>
+            <point key="canvasLocation" x="102.45535714285714" y="137.68115942028987"/>
         </scene>
     </scenes>
 </document>

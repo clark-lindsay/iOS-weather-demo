@@ -84,6 +84,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: {(context) -> Void in self.forecastList.collectionViewLayout.invalidateLayout()}, completion: nil)
     }
     
     func configureViewForState(state: ViewState) {
