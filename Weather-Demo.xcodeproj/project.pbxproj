@@ -22,6 +22,8 @@
 		7A214190246DD65A008DB128 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A21418F246DD65A008DB128 /* WeatherDataModel.swift */; };
 		7A80BDA324745FEB0089FF4B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A80BDA224745FEB0089FF4B /* LocationManager.swift */; };
 		7ADE4D9D247EE29F00D6DD80 /* ForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE4D9C247EE29F00D6DD80 /* ForecastTests.swift */; };
+		7ADE4DA5247F01C500D6DD80 /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE4DA4247F01C500D6DD80 /* HTTPClientTests.swift */; };
+		7ADE4DA6247F01C500D6DD80 /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADE4DA4247F01C500D6DD80 /* HTTPClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,7 @@
 		7ADE4D9A247EE29F00D6DD80 /* ForecastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForecastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ADE4D9C247EE29F00D6DD80 /* ForecastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTests.swift; sourceTree = "<group>"; };
 		7ADE4D9E247EE29F00D6DD80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7ADE4DA4247F01C500D6DD80 /* HTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPClientTests.swift; path = ForecastTests/HTTPClientTests.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,7 @@
 		7A214173246DA88B008DB128 /* Weather-DemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				7ADE4DA4247F01C500D6DD80 /* HTTPClientTests.swift */,
 				7A214174246DA88B008DB128 /* Weather_DemoTests.swift */,
 				7A214176246DA88B008DB128 /* Info.plist */,
 			);
@@ -352,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ADE4DA5247F01C500D6DD80 /* HTTPClientTests.swift in Sources */,
 				7A214175246DA88B008DB128 /* Weather_DemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ADE4DA6247F01C500D6DD80 /* HTTPClientTests.swift in Sources */,
 				7ADE4D9D247EE29F00D6DD80 /* ForecastTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

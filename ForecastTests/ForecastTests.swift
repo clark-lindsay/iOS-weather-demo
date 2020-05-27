@@ -15,13 +15,11 @@ class ForecastTests: XCTestCase {
     override func setUpWithError() throws {
         super.setUp()
         systemUnderTest = Forecast(day: "Friday", conditions: "Partly Cloudy", high: 72, low: 60)
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDownWithError() throws {
         systemUnderTest = nil
         super.tearDown()
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
     func testHighLabelIsFormatted() {
@@ -44,6 +42,7 @@ class ForecastTests: XCTestCase {
     
     func testParseThrowsError() {
         let givenInfo: [String: AnyObject] = ["day": "Monday" as AnyObject, "high": 65 as AnyObject]
+        
         XCTAssertThrowsError(try Forecast.parse(json: givenInfo))
     }
 }
