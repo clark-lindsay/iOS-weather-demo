@@ -10,14 +10,11 @@ import XCTest
 @testable import Weather_Demo
 
 class HTTPClientTests: XCTestCase {
-    var systemUnderTest: HTTPClient!
     override func setUpWithError() throws {
         super.setUp()
-        systemUnderTest = HTTPClient()
     }
 
     override func tearDownWithError() throws {
-        systemUnderTest = nil
         super.tearDown()
     }
 
